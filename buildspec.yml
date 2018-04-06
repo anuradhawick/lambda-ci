@@ -4,8 +4,9 @@ phases:
     commands:
       - cd app && npm install
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket deployment-zip-files 
-                                   --output-template-file samTemplate.yaml
+                                   --output-template-file outputSamTemplate.yaml
 artifacts:
   type: zip
   files:
     - samTemplate.yaml
+    - outputSamTemplate.yaml
