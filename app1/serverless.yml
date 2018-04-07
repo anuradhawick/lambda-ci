@@ -1,4 +1,4 @@
-service: serverless-name-generator
+service: function-one
 provider:
   name: aws
   runtime: nodejs6.10
@@ -9,5 +9,5 @@ functions:
     handler: handler.handler # required, handler set in AWS Lambda
     events:
       - http:
-          path: generate
+          path: app1
           method: get
