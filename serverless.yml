@@ -29,3 +29,8 @@ functions:
       - http:
           path: disp/folder
           method: get
+  onlyFunc:
+    handler: function-in-folder/index.handler # required, handler set in AWS Lambda
+    environment:
+      VALUE1: ${file(./configs.js):getEnvVars.value1}
+      VALUE2: ${file(./configs.js):getEnvVars.value2}
