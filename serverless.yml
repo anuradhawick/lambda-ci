@@ -10,6 +10,9 @@ package:
 functions:
   generate:
     handler: handler.handler # required, handler set in AWS Lambda
+  generate:
+    handler: handler.handler # required, handler set in AWS Lambda
+    name: testCi
   display:
     handler: second.handler # required, handler set in AWS Lambda
   ffinvok:
