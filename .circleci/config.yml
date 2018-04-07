@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Install Node dependencies
-          command: cd app1 && npm install
+          command: npm install
       - run:
           name: Deploy to AWS
           command: npm run deploy
