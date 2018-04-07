@@ -4,6 +4,9 @@ provider:
   runtime: nodejs6.10
 plugins:
   - serverless-offline
+package:
+  include:
+    - node_modules/**
 functions:
   generate:
     handler: handler.handler # required, handler set in AWS Lambda
@@ -16,4 +19,10 @@ functions:
     events:
       - http:
           path: disp
+          method: get
+  ffinvok:
+    handler: function-in-folder/second.handler # required, handler set in AWS Lambda
+    events:
+      - http:
+          path: disp/folder
           method: get
