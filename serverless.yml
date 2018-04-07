@@ -10,25 +10,13 @@ package:
 functions:
   generate:
     handler: handler.handler # required, handler set in AWS Lambda
-    events:
-      - http:
-          path: app2
-          method: get
   display:
     handler: second.handler # required, handler set in AWS Lambda
-    events:
-      - http:
-          path: disp
-          method: get
   ffinvok:
     handler: function-in-folder/index.handler # required, handler set in AWS Lambda
     environment:
       VALUE1: ${file(./configs.js):getEnvVars.value1}
       VALUE2: ${file(./configs.js):getEnvVars.value2}
-    events:
-      - http:
-          path: disp/folder
-          method: get
   onlyFunc:
     handler: function-in-folder/index.handler # required, handler set in AWS Lambda
     environment:
