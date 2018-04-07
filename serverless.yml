@@ -2,6 +2,9 @@ service: ci-test-service
 provider:
   name: aws
   runtime: nodejs6.10
+  environment:
+    VALUE1: ${file(./configs.js):getEnvVars.value1}
+    VALUE2: ${file(./configs.js):getEnvVars.value2}
 plugins:
   - serverless-offline
 package:
@@ -26,25 +29,3 @@ functions:
       - http:
           path: disp/folder
           method: get
-resources:
-  Resources:
-    makyajDeleteJob:
-      Type: 'AWS::Lambda::Function'
-      Properties:
-        Handler: handler.handler
-        Runtime: nodejs6.10
-        CodeUri: .
-        Description: ''
-        MemorySize: 128
-        Timeout: 3
-        Role: 'arn:aws:iam::086588549640:role/service-role/lambdaUser'
-        Events:
-          Api1:
-            Type: Api
-            Properties:
-              Path: '/jobs/{jobId}'
-              Method: DELETE
-        Environment:
-          Variables:
-            MONGODB_ATLAS_CLUSTER_URI: >-
-              mongodb://lambdaUser:rABjR5yxsmyPy2MN@cluster0-shard-00-00-gw4c5.mongodb.net:27017,cluster0-shard-00-01-gw4c5.mongodb.net:27017,cluster0-shard-00-02-gw4c5.mongodb.net:27017/makyaj?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin
