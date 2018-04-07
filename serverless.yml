@@ -7,7 +7,7 @@ plugins:
 functions:
   generate:
     handler: handler.handler # required, handler set in AWS Lambda
-    # events:
-    #   - http:
-    #       path: generate
-    #       method: get
+    events:
+      - http:
+          path: generate
+          method: get
