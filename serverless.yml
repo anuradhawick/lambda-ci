@@ -34,3 +34,4 @@ functions:
     environment:
       VALUE1: ${file(./configs.js):getEnvVars.value1}
       VALUE2: ${file(./configs.js):getEnvVars.value2}
+      MONGO: MONGO://database-path
