@@ -21,7 +21,7 @@ functions:
           path: disp
           method: get
   ffinvok:
-    handler: function-in-folder/second.handler # required, handler set in AWS Lambda
+    handler: function-in-folder/index.handler # required, handler set in AWS Lambda
     events:
       - http:
           path: disp/folder
