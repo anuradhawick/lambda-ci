@@ -4,7 +4,7 @@ exports.handler = (event, context, callback) => {
     const response = {
         statusCode: 200,
         body: JSON.stringify({
-            name: generate(),
+            name: generate() + " hshshs",
         }),
     };
     
