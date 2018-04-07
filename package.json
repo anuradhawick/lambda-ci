@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "serve": "serverless offline start",
-    "deploy": "serverless deploy"
+    "deploy": "serverless deploy --force"
   },
   "author": "",
   "license": "ISC",
