@@ -29,7 +29,7 @@ functions:
 resources:
   Resources:
     makyajDeleteJob:
-      Type: 'AWS::Serverless::Function'
+      Type: 'AWS::Lambda::Function'
       Properties:
         Handler: handler.handler
         Runtime: nodejs6.10
