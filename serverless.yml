@@ -11,3 +11,9 @@ functions:
       - http:
           path: app2
           method: get
+  display:
+    handler: second.handler # required, handler set in AWS Lambda
+    events:
+      - http:
+          path: disp
+          method: get
