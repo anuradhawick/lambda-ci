@@ -2,9 +2,6 @@ service: ci-test-service
 provider:
   name: aws
   runtime: nodejs6.10
-  environment:
-    VALUE1: ${file(./configs.js):getEnvVars.value1}
-    VALUE2: ${file(./configs.js):getEnvVars.value2}
 plugins:
   - serverless-offline
 package:
@@ -25,6 +22,9 @@ functions:
           method: get
   ffinvok:
     handler: function-in-folder/index.handler # required, handler set in AWS Lambda
+    environment:
+      VALUE1: ${file(./configs.js):getEnvVars.value1}
+      VALUE2: ${file(./configs.js):getEnvVars.value2}
     events:
       - http:
           path: disp/folder
